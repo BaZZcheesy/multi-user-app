@@ -1,23 +1,29 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
-import Demo from './Demo.jsx'
+import * as React from 'react'
+import * as ReactDOM from 'react-dom/client'
+import {
+    createBrowserRouter, RouterProvider
+} from 'react-router-dom'
+import App from './components/App'
+import Fetch from './components/Fetch'
+import Home from './components/Home'
 
-const data = {
-  name: "Max Muster",
-  hobbies: ["surf", "eat", "sleep"]
-}
-
-const clickFun = () => {
-  console.log("Clickfun clicked")
-}
-
-const root = document.getElementById("root")
+const router = createBrowserRouter([
+    {
+        path: "/",
+        element: <Home />
+    },
+    {
+        path: "/fetch",
+        element: <Fetch />
+    },
+    {
+        path: "/app",
+        element: <App />
+    }
+])
 
 ReactDOM.createRoot(root).render(
-  <React.StrictMode>
-    <Demo p1="Salam" person={data} fun={clickFun}/>
-    <App />
-  </React.StrictMode>,
+    <React.StrictMode>
+        <RouterProvider router={router}/>
+    </React.StrictMode>
 )

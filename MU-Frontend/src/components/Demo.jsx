@@ -1,6 +1,15 @@
+import MainNav from './MainNavigation'
+
 const Person = ({person}) => {
+    const hobbies = person.hobbies.map(hob =>
+        <li>{hob}</li>
+    )
+
     return <>
         <p>Name: {person.name}</p>
+        <ol>
+            {hobbies}
+        </ol>
     </>
 }
 

@@ -9,7 +9,6 @@ public class PrivateController {
 
     @GetMapping("private")
     public ResponseEntity<String> getPrivatePart() {
-        return ResponseEntity.ok("dise ist der private teil ");
+        return ResponseEntity.ok("Dies ist der Private Teil ");
     }
-
 }
