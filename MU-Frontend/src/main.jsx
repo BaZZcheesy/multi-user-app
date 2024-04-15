@@ -1,19 +1,23 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
-import Person from './Person.jsx'
 import './index.css'
+import Demo from './Demo.jsx'
 
 const data = {
   name: "Max Muster",
   hobbies: ["surf", "eat", "sleep"]
 }
 
+const clickFun = () => {
+  console.log("Clickfun clicked")
+}
+
 const root = document.getElementById("root")
 
 ReactDOM.createRoot(root).render(
   <React.StrictMode>
-    <Person person={data} />
+    <Demo p1="Salam" person={data} fun={clickFun}/>
     <App />
   </React.StrictMode>,
 )
